@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: demo
+        ssl: true
     spec:
       containers:
       - name: demo

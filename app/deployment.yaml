@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: demo
-        ssl: ssd
     spec:
       containers:
       - name: demo

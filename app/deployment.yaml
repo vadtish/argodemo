@@ -27,6 +27,7 @@ metadata:
 spec:
   selector:
     app: demo
+    info: ssl
   ports:
     - protocol: TCP
       port: 80

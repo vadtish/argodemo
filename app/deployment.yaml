@@ -1,35 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app
-  labels:
-    app: demo
-    info: ssl
+  name: nginx-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: demo
+      app: nginx
   template:
     metadata:
       labels:
-        app: demo
+        app: nginx
     spec:
       containers:
-      - name: demo
-        image: nginx
+      - name: nginx
+        image: nginx:latest
         ports:
         - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: demo-service
-spec:
-  selector:
-    app: demo
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
